@@ -41,8 +41,9 @@ class App {
 
     pageProduit(){
         console.log(this)
-        ServiceBiere.getListeBieres(this.afficherBiere.bind(this));
-        let liste = new ListeComposant("allo", "liste");
+        //ServiceBiere.getListeBieres(this.afficherBiere.bind(this));
+        let liste = new ListeComposant();
+        liste.Afficher();
         console.log(liste);
         console.log("Produit")
     }
