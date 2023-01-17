@@ -16,7 +16,7 @@ https://github.com/visionmedia/page.js
         <link rel="stylesheet" href="./css/style.css">
         
         <base href= "/">  <!-- Demande des ajustements en fonction de l'url de base -->
-        
+        <script src="//unpkg.com/mustache@latest"></script>
         <script type="module" src="./js/App.mjs"></script>
     </head>
     <body>
@@ -25,7 +25,7 @@ https://github.com/visionmedia/page.js
             <span class="logo"><a href="#!/accueil">Prototype Client Biero</a></span>
             <span class="filler"></span>
             <nav class="menuPrincipal">
-               <a href="#!/liste">Liste</a>
+               <a href="#!/produit">Liste des produits</a>
             </nav>
             Connecté : <input type="checkbox" name="log"> <span class="material-icons">done</span>
         </header> 
@@ -33,6 +33,9 @@ https://github.com/visionmedia/page.js
             <!-- Point d'insertion des composants -->
         </main>
 
+        <script id="test" type="x-tmpl-mustache">
+            Bonjour {{nom}}
+        </script> 
     </body>
 
 </html>

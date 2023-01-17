@@ -13,15 +13,49 @@
  
 import ServiceBiere from './ServiceBiere.mjs';
 import Affichage from './Affichage.mjs';
+import page from "//unpkg.com/page/page.mjs";
+import ListeComposant from './Composant/Liste/ListeComposant.mjs';
 
 
 class App {
+
+    // Créer trois routes : /accueil ou /, /produit, /produit/:id
+
+
     constructor(){
         this._app = document.querySelector(".app");
-        console.log(this);
+        
+        page("/", this.pageAccueil.bind(this));
+        page("/accueil", this.pageAccueil.bind(this));
+        page("/produit", this.pageProduit.bind(this));
+        page("/produit/:id", this.pageDetail.bind(this));
+        page({hashbang:true});
 
+        
 
     }
+
+    pageAccueil(){
+        console.log("Accueil")
+    }
+
+    pageProduit(){
+        console.log(this)
+        ServiceBiere.getListeBieres(this.afficherBiere.bind(this));
+        let liste = new ListeComposant("allo", "liste");
+        console.log(liste);
+        console.log("Produit")
+    }
+
+    pageDetail(){
+        console.log("Detail")
+    }
+
+    
+    afficherBiere(bieres){
+        console.log(bieres);
+     }
+ 
 }
 new App();
 

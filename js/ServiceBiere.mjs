@@ -16,11 +16,14 @@ export default class ServiceBiere {
      * Récupérer l'ensemble des biere sur le service Web
      *
      * @static
-     * @returns Promise
+     * @returns void
      * @memberof Biere
      */
-    static getListeBieres (){
-      
+    static getListeBieres (fctRappel){
+        console.log(this);
+        fetch(this.api_url+"biere")
+            .then(reponse=> reponse.json())
+            .then(data => fctRappel(data));
     }
 
 }
