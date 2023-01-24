@@ -17,7 +17,7 @@ export default class Composant {
      * @param {boolean} bDirty Force le rafraichissement des données (et l'affichage)
      */
     setData(data, bDirty){
-        console.log(data);
+        //console.log(data);
         bDirty = bDirty || false;
         if(bDirty || (JSON.stringify(this.data) != JSON.stringify(data))){
             this.data = data;
@@ -31,13 +31,13 @@ export default class Composant {
     }
 
     AfficherTemplate(){
-        console.log(this.tmplComposant)
+        //console.log(this.tmplComposant)
         if(this.tmplComposant){
-            console.log("afficher")
+            //console.log("afficher")
             this.Afficher();
         }
         else{
-            console.log("charge")
+            //console.log("charge")
             this.ChargeTemplate();
         }
 
@@ -50,22 +50,23 @@ export default class Composant {
                 this.tmplComposant = tmpl
                 //console.log(this.tmplComposant);
                 if(this.data){
-                    console.log(this.data)
+                    //console.log(this.data)
                     this.Afficher();
                 }
             });
 
-        //let tmpl = document.querySelector("#test").innerHTML;
-        //let chaineHTML = Mustache.render(tmpl, {nom : "Toto le magicien"});
-        //console.log(chaineHTML);
-        //document.querySelector(".app").innerHTML = chaineHTML;
 
     }
     Afficher(){
-        console.log(this.tmplComposant);
+       // console.log(this.tmplComposant);
         let chaineHTML = Mustache.render(this.tmplComposant, this.data);
         //console.log(chaineHTML);
         this.noeudParent.innerHTML = chaineHTML;
+        if(this.AjouterListener)
+        {
+            this.AjouterListener();
+        } 
         return chaineHTML;
     }
+
 }

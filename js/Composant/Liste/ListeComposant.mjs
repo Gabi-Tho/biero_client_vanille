@@ -25,5 +25,25 @@ export default class ListeComposant extends Composant{
 
     }
 
+    AjouterListener(){
+        console.log("ajouter listener");
+        document.querySelector(".btnNomASC").addEventListener("click", (evt)=>{
+            console.log(evt)
+            this.data.data.sort((a,b)=>{
+                return a.nom.localeCompare(b.nom);
+            })
+            //console.log(this.data.data[0])
+            this.setData(this.data, true);
+        })
+        document.querySelector(".btnNomDESC").addEventListener("click", (evt)=>{
+            console.log(evt)
+            this.data.data.sort((a,b)=>{
+                return b.nom.localeCompare(a.nom);
+            })
+            //console.log(this.data.data[0])
+            this.setData(this.data, true);
+        })
+    }
+
     
 }

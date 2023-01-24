@@ -20,10 +20,20 @@ export default class ServiceBiere {
      * @memberof Biere
      */
     static getListeBieres (fctRappel){
-        console.log(this);
+        //console.log(this);
         fetch(this.api_url+"biere")
             .then(reponse=> reponse.json())
             .then(data => fctRappel(data));
+    }
+
+    static getListeDesMeilleuresBieres(fctRappel){
+        fetch(this.api_url+"biere")
+        .then(reponse=> reponse.json())
+        .then(data => {
+            // Comment ne garder que les 5 meilleures bières ?   
+            //@todo...
+            fctRappel(data)
+        });
     }
 
 }
