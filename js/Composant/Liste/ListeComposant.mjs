@@ -14,7 +14,7 @@ export default class ListeComposant extends Composant{
         if(!data){
             this.getBieres();
         }else{
-            console.log(data); debugger
+            console.log(data);
             this.setData(data, true); 
         }
 

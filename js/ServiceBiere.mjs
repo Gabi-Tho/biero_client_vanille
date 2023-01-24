@@ -36,4 +36,36 @@ export default class ServiceBiere {
         });
     }
 
+    static getUneBiere(id, fctRappel){
+        fetch(this.api_url+"biere"+"/"+id)
+        .then(reponse=> reponse.json())
+        .then(data => {
+            fctRappel(data)
+        });
+    }
+
+    static getCommentaires(id, fctRappel){
+        fetch(this.api_url+"biere"+"/"+id+"/commentaire")
+            .then(reponse=> reponse.json())
+            .then(data => {
+                fctRappel(data)
+            });
+    }
+
+    static ajouterCommentaires(id, commentaire, fctRappel){
+        var entete = new Headers();
+        entete.append("Content-Type", "application/json");
+        entete.append("Authorization", "Basic " + btoa("biero:biero"));
+        
+        fetch(this.api_url+"biere"+"/"+id+"/commentaire", {
+            method:"PUT",
+            body : JSON.stringify(commentaire),
+            headers : entete
+        })
+            .then(reponse=> reponse.json())
+            .then(data => {
+                fctRappel(data)
+            });
+    }
+
 }

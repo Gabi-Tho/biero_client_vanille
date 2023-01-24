@@ -17,13 +17,9 @@ export default class Composant {
      * @param {boolean} bDirty Force le rafraichissement des données (et l'affichage)
      */
     setData(data, bDirty){
-        //console.log(data);
-        bDirty = bDirty || false;
-        if(bDirty || (JSON.stringify(this.data) != JSON.stringify(data))){
-            this.data = data;
-            console.log(this.data);
-            this.AfficherTemplate();
-        }
+        this.data = data;
+        console.log(this.data);
+        this.AfficherTemplate();
     }
 
     getData(){
