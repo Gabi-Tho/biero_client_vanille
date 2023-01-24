@@ -29,6 +29,10 @@ export default class Composant {
             .then(tmpl => {
                 this.tmplComposant = tmpl
                 console.log(this.tmplComposant);
+                if(this.data){
+                    console.log(this.data)
+                    this.Afficher();
+                }
             });
 
         //let tmpl = document.querySelector("#test").innerHTML;
