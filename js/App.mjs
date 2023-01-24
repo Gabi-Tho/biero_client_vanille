@@ -18,7 +18,7 @@ import ListeComposant from './Composant/Liste/ListeComposant.mjs';
 
 
 class App {
-    data = [{"id_biere":"6","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vulputate enim ac luctus maximus. Morbi gravida vel eros sit amet semper. Duis vitae semper risus, sed pulvinar leo. Integer ultrices ante quam, non pretium dolor lacinia ut. Praesent in posuere mauris. In vel blandit mauris. Nunc placerat sollicitudin velit id finibus. Praesent quis elit posuere, iaculis nisi in, pretium turpis. Curabitur mattis viverra laoreet. In eleifend ligula et eros varius aliquam. Phasellus facilisis enim quam, sit amet cursus turpis scelerisque et.\r\n","nom":"Une biere 1","brasserie":"La brasserie","image":null,"date_ajout":"2017-03-15 09:02:16","date_modif":null,"note_moyenne":"2.0000","note_nombre":"3"}];
+    //data = [{"id_biere":"6","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vulputate enim ac luctus maximus. Morbi gravida vel eros sit amet semper. Duis vitae semper risus, sed pulvinar leo. Integer ultrices ante quam, non pretium dolor lacinia ut. Praesent in posuere mauris. In vel blandit mauris. Nunc placerat sollicitudin velit id finibus. Praesent quis elit posuere, iaculis nisi in, pretium turpis. Curabitur mattis viverra laoreet. In eleifend ligula et eros varius aliquam. Phasellus facilisis enim quam, sit amet cursus turpis scelerisque et.\r\n","nom":"Une biere 1","brasserie":"La brasserie","image":null,"date_ajout":"2017-03-15 09:02:16","date_modif":null,"note_moyenne":"2.0000","note_nombre":"3"}];
     // Créer trois routes : /accueil ou /, /produit, /produit/:id
 
 
@@ -44,7 +44,7 @@ class App {
         //ServiceBiere.getListeBieres(this.afficherBiere.bind(this));
 
         let liste = new ListeComposant(this.data);
-        liste.Afficher();
+        
         console.log(liste);
         console.log("Produit")
     }

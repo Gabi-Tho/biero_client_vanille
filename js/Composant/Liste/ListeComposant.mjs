@@ -9,11 +9,13 @@ export default class ListeComposant extends Composant{
         let pathGabarit ="./js/Composant/Liste/liste.html";
         super(data, pathGabarit);
         this.noeudParent = document.querySelector(".app");
+        console.log(data)
         
         if(!data){
             this.getBieres();
         }else{
-            this.setData(data);
+            console.log(data);
+            this.setData(data, true); 
         }
 
     }
