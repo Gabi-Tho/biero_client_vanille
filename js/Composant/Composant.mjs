@@ -34,7 +34,7 @@ export default class Composant {
         //console.log(this.tmplComposant)
         if(this.tmplComposant){
             //console.log("afficher")
-            this.Afficher();
+            this.#Afficher();
         }
         else{
             //console.log("charge")
@@ -51,13 +51,13 @@ export default class Composant {
                 //console.log(this.tmplComposant);
                 if(this.data){
                     //console.log(this.data)
-                    this.Afficher();
+                    this.#Afficher();
                 }
             });
 
 
     }
-    Afficher(){
+    #Afficher(){
        // console.log(this.tmplComposant);
         let chaineHTML = Mustache.render(this.tmplComposant, this.data);
         //console.log(chaineHTML);
