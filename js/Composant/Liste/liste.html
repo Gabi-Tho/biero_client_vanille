@@ -12,13 +12,15 @@
                 <th>Brasserie</th>
                 <th>Note</th>
                 <th>Nombre</th>
+                <th>id</th>
             </tr>
             {{#data}}
             <tr>
-                <td>{{nom}}</td>
+                <td><a href="/produit/{{id_biere}}">{{nom}}</a></td>
                 <td>{{brasserie}}</td>
                 <td>{{note_moyenne}}</td>
                 <td>{{note_nombre}}</td>
+                <td>{{id_biere}}</td>
             </tr>
             {{/data}}
         </table>

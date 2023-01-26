@@ -1,15 +1,25 @@
-<h1>{{biere.nom}}</h1>
-<p>{{biere.description}}</p>
+
+<div class="container">
+    <hr>
+    <h1>{{biere.nom}}</h1>
+    <p>{{biere.description}}</p>
+    <hr>
+</div>
+
+
+
 <section class="commentaire">
     <p>Courriel : <input class="courriel" name="courriel"></p>
-    <p>Commentaires : <textarea rows="4" cols="50"></textarea></p>
+    <p>Commentaires : <input class="commentaire" name="commentaire"></p>
     <p><button class="btnSoumettre">Envoyer le commentaire</button></p>
 </section>
-<section class="listecommentaires">
+
+<section class="listecommentaires commentaire">
     {{#commentaires}}
     <article>
-        <p>{{commentaire}}</p>
-        <p>{{courriel}}</p>
+        <p class="commentaire">{{commentaire}}
+            <strong>{{courriel}}</strong>
+        </p>
     </article>
     {{/commentaires}}
 </section>

@@ -17,12 +17,10 @@ export default class ListeComposant extends Composant{
             console.log(data);
             this.setData(data, true); 
         }
-
     }
 
     getBieres(){
         ServiceBiere.getListeBieres(this.setData.bind(this));
-
     }
 
     AjouterListener(){

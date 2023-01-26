@@ -53,6 +53,9 @@ export default class Composant {
 
 
     }
+
+    //what does # mean?
+    
     #Afficher(){
        // console.log(this.tmplComposant);
         let chaineHTML = Mustache.render(this.tmplComposant, this.data);

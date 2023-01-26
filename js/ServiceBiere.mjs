@@ -1,3 +1,5 @@
+//=========this class creates the URL and fetches data==========\\
+
 /**
  * Module de gestion des données et des requêtes des bieres
  *
@@ -11,7 +13,7 @@ export default class ServiceBiere {
      */
     static api_url = "http://127.0.0.1:8000/webservice/php/";
 
-    
+
     /**
      * Récupérer l'ensemble des biere sur le service Web
      *
@@ -19,6 +21,9 @@ export default class ServiceBiere {
      * @returns void
      * @memberof Biere
      */
+
+    //fetch will default to get
+    //ALL REQUESTS ARE BY DEFAULT GET
     static getListeBieres (fctRappel){
         //console.log(this);
         fetch(this.api_url+"biere")
@@ -53,10 +58,14 @@ export default class ServiceBiere {
     }
 
     static ajouterCommentaires(id, commentaire, fctRappel){
+
+        //WHAT IS THIS? read fetch documentation configuration of http request
         var entete = new Headers();
         entete.append("Content-Type", "application/json");
         entete.append("Authorization", "Basic " + btoa("biero:biero"));
         
+
+        //construction de l'url qui fait fetch au serveur pour isnerer données
         fetch(this.api_url+"biere"+"/"+id+"/commentaire", {
             method:"PUT",
             body : JSON.stringify(commentaire),
@@ -67,5 +76,7 @@ export default class ServiceBiere {
                 fctRappel(data)
             });
     }
+
+
 
 }

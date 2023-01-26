@@ -27,14 +27,12 @@ class App {
 
     constructor(){
         this._app = document.querySelector(".app");
-        
+        //these are urls that define the route\\
         page("/", this.pageAccueil.bind(this));
         page("/accueil", this.pageAccueil.bind(this));
         page("/produit", this.pageProduit.bind(this));
         page("/produit/:id", this.pageDetail.bind(this));
         page({hashbang:true});
-
-        
 
     }
 
@@ -45,10 +43,11 @@ class App {
 
     pageProduit(){
         console.log(this)
+
         //ServiceBiere.getListeBieres(this.afficherBiere.bind(this));
 
         let liste = new ListeComposant();
-        
+        //an object that contains the gabarit, noeudParent, 
         console.log(liste);
         console.log("Produit")
     }
@@ -56,7 +55,9 @@ class App {
     pageDetail(ctx){
         // Lire l'id...
         console.log(ctx)
-        let Detail = new BiereComposant(ctx.params.id)
+        //id of beer coming from routeur
+        let biere_id = ctx.params.id;
+        let Detail = new BiereComposant(biere_id)
         console.log("Detail")
     }
 
