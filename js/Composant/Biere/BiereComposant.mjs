@@ -11,8 +11,6 @@ export default class BiereComposant extends Composant{
         this.noeudParent = document.querySelector(".app");
         this.data = {};
         this.getInformation(id);
-        
-
     }
 
     getInformation(id){
