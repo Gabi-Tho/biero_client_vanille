@@ -20,6 +20,7 @@ export default class BiereComposant extends Composant{
         //class     //method inside the class /CB with data
         ServiceBiere.getCommentaires(id, this.setCommentaire.bind(this));
         ServiceBiere.getUneBiere(id, this.setBiere.bind(this));
+        ServiceBiere.getNote(id, this.setNote.bind(this));
 
     }
 
@@ -30,12 +31,23 @@ export default class BiereComposant extends Composant{
         //biere{biere : }
 
         this.setData(this.data);
+
     }
 
+    //what do you do?????
     setCommentaire(data){
         this.data.commentaires = data.data;
-
         this.setData(this.data);
+    }
+
+    setNote(data){
+
+        console.log(this.data);
+        this.data.note = data.data;
+
+        console.log(this.data);
+        this.setData(this.data);
+
     }
 
     AjouterListener(){
@@ -53,7 +65,6 @@ export default class BiereComposant extends Composant{
                     ServiceBiere.getCommentaires(this.id, this.setCommentaire.bind(this));
                     this.setData(this.data);
 
-                    console.log(data);
                 });
             }else{
                 erreur.innerHTML = "format de courriel invalide";

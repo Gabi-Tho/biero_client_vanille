@@ -65,6 +65,15 @@ export default class ServiceBiere {
             });
     }
 
+    static getNote(id, fctRappel){
+        fetch(this.api_url+"biere"+"/"+id+"/note")
+            .then(reponse=> reponse.json())
+            .then(data => {
+                fctRappel(data)
+                console.log(data);
+            });
+    }
+
     static ajouterCommentaires(id, commentaire, fctRappel){
 
         //WHAT IS THIS? read fetch documentation configuration of http request
