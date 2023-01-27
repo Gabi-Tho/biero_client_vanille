@@ -193,13 +193,14 @@ td{
 
 section.commentaire{
     background-color:  rgba(132, 77, 132, 0.185);
+    /* box-shadow: rgb(132, 77, 132) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 input.courriel{
 
     padding-top: 10px;
     align-self: center;
-    text-transform: uppercase;
     padding-right: 5px;
     border: none;
     border-bottom: 2px solid black;
@@ -209,7 +210,6 @@ input.courriel{
 input.commentaire{
     padding-top: 10px;
     align-self: center;
-    text-transform: uppercase;
     padding-right: 5px;
     border: none;
     border-bottom: 2px solid black;
@@ -265,5 +265,5 @@ input.commentaire{
 
 .erreur{
     color: red;
-    margin-left: 25px;
+    text-align: center;
 }
