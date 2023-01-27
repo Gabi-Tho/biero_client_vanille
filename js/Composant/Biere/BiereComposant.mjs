@@ -8,10 +8,11 @@ export default class BiereComposant extends Composant{
     constructor(id, gabarit){
         let pathGabarit ="./js/Composant/Biere/biere.html";
         //why is this empty? and what is super?
-        super("", pathGabarit);
+        super("", pathGabarit); // this calls the parent cosntructor in this case
         this.noeudParent = document.querySelector(".app");
         this.data = {};
         this.getInformation(id);
+        this.id = id;
     }
 
     getInformation(id){
@@ -42,8 +43,9 @@ export default class BiereComposant extends Composant{
 
             let courrielz = this.noeudParent.querySelector("[name='courriel']").value;
             let commentairez = this.noeudParent.querySelector("[name='commentaire']").value;
-
-            ServiceBiere.ajouterCommentaires(1, {courriel : courrielz, commentaire: commentairez}, (data)=>{
+            // let id = this.noeudParent.querySelector("small");
+            // console.log(id);
+            ServiceBiere.ajouterCommentaires(this.id, {courriel : courrielz, commentaire: commentairez}, (data)=>{
                 console.log(data);
             });
 

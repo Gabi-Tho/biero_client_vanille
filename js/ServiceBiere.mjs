@@ -35,9 +35,17 @@ export default class ServiceBiere {
         fetch(this.api_url+"biere")
         .then(reponse=> reponse.json())
         .then(data => {
-            // Comment ne garder que les 5 meilleures bières ?   
-            //@todo...
+
+
+            
+            data.data.sort((a,b)=>{
+                return b.note_moyenne.localeCompare(a.note_moyenne);
+            });
+
+            data.data.splice(5);
+
             fctRappel(data)
+
         });
     }
 

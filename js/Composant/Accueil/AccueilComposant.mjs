@@ -11,8 +11,6 @@ export default class AccueilComposant extends Composant{
         this.noeudParent = document.querySelector(".app");
         
         this.getBieres();
-        
-
     }
 
     getBieres(){
@@ -21,5 +19,12 @@ export default class AccueilComposant extends Composant{
 
     }
 
+    setBiere(biere){
+        //data of the instance of bierecomposant  //data du serveur         
+        this.data.biere = biere.data;
+        //biere{biere : }
+        console.log(this.data)
+        this.setData(this.data);
+    }
     
 }

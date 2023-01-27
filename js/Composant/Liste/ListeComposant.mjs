@@ -21,6 +21,7 @@ export default class ListeComposant extends Composant{
 
     getBieres(){
         ServiceBiere.getListeBieres(this.setData.bind(this));
+                                    //this is printing out data 
     }
 
     AjouterListener(){
