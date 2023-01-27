@@ -1,28 +1,33 @@
 
-<div class="container">
-    <small>{{biere.id_biere}}</small>
-    <hr>
-    <h1>{{biere.nom}}</h1>
-    <p>{{biere.description}}</p>
-    <hr>
+
+<div class="container-body">
+    <div class="container">
+        <small>{{biere.id_biere}}</small>
+        <hr>
+        <h1>{{biere.nom}}</h1>
+        <p>{{biere.description}}</p>
+        <hr>
+    </div>
+    
+    <section class="commentaire">
+        <p>
+    
+            <label for="courriel" class="label-courriel">Courriel</label>
+            <input class="courriel" name="courriel" value="">
+        </p>
+    
+        <p>
+            <label for="commentaire" class="label-commentaire">Commentaire</label>
+            <input class="commentaire" name="commentaire" value="">
+        </p>
+        <p><input type="submit" class="btn btnSoumettre" value="submit"></input></p>
+        <span class="erreur"></span>
+    </section>
 </div>
 
-<section class="commentaire">
-    <p>
-
-        <label for="courriel" class="label-courriel">Courriel</label>
-        <input class="courriel" name="courriel" value="">
-    </p>
-
-    <p>
-        <label for="commentaire" class="label-commentaire">Commentaire</label>
-        <input class="commentaire" name="commentaire" value="">
-    </p>
-    <p><input type="submit" class="btn btnSoumettre" value="submit"></input></p>
-    <span class="erreur"></span>
-</section>
-
 <section class="listecommentaires ">
+    
+<hr>
     {{#commentaires}}
     <article>
         <p class="commentaire">{{commentaire}}

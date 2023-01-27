@@ -57,6 +57,12 @@ main aside {
     flex-direction: column;
 }
 
+.container-body{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
 /**************************
 Section catalogue
 ******************************/
@@ -174,13 +180,14 @@ td{
     padding: 10px;
     display: flex;
     flex-direction: column;
+    width: 35%;
 }
 
 .commentaire p{
-
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     display: flex;
-    padding: 10px;
+    padding: 0px;
     margin-top: 5px;
 }
 
@@ -189,16 +196,25 @@ section.commentaire{
 }
 
 input.courriel{
+
+    padding-top: 10px;
+    align-self: center;
+    text-transform: uppercase;
+    padding-right: 5px;
     border: none;
     border-bottom: 2px solid black;
-
     width: 80%;
 }
 
 input.commentaire{
+    padding-top: 10px;
+    align-self: center;
+    text-transform: uppercase;
+    padding-right: 5px;
     border: none;
-    height: 60px;
+    border-bottom: 2px solid black;
     width: 80%;
+    height: 200px;
 
 }
 
@@ -206,7 +222,7 @@ input.commentaire{
     padding-top: 10px;
     align-self: center;
     text-transform: uppercase;
-    padding-right: 5px;
+    padding: 10px;
 
 }
 
@@ -214,7 +230,12 @@ input.commentaire{
     padding-top: 10px;
     align-self: center;
     text-transform: uppercase;
-    padding-right: 5px;
+    padding: 10px;
+}
+
+.container{
+    width: 50%;
+    height: 100%;
 }
 
 /***************************
