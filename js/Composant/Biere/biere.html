@@ -8,12 +8,21 @@
 </div>
 
 <section class="commentaire">
-    <p>Courriel : <input class="courriel" name="courriel"></p>
-    <p>Commentaires : <input class="commentaire" name="commentaire"></p>
-    <p><button class="btnSoumettre">Envoyer le commentaire</button></p>
+    <p>
+
+        <label for="courriel" class="label-courriel">Courriel</label>
+        <input class="courriel" name="courriel" value="">
+    </p>
+
+    <p>
+        <label for="commentaire" class="label-commentaire">Commentaire</label>
+        <input class="commentaire" name="commentaire" value="">
+    </p>
+    <p><input type="submit" class="btn btnSoumettre" value="submit"></input></p>
+    <span class="erreur"></span>
 </section>
 
-<section class="listecommentaires commentaire">
+<section class="listecommentaires ">
     {{#commentaires}}
     <article>
         <p class="commentaire">{{commentaire}}

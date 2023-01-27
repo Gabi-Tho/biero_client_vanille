@@ -26,6 +26,8 @@ export default class ListeComposant extends Composant{
 
     AjouterListener(){
         console.log("ajouter listener");
+
+
         document.querySelector(".btnNomASC").addEventListener("click", (evt)=>{
             console.log(evt)
             this.data.data.sort((a,b)=>{
@@ -34,6 +36,8 @@ export default class ListeComposant extends Composant{
             //console.log(this.data.data[0])
             this.setData(this.data, true);
         })
+
+
         document.querySelector(".btnNomDESC").addEventListener("click", (evt)=>{
             console.log(evt)
             this.data.data.sort((a,b)=>{
@@ -42,6 +46,49 @@ export default class ListeComposant extends Composant{
             //console.log(this.data.data[0])
             this.setData(this.data, true);
         })
+
+        document.querySelector(".btnBrasserieDESC").addEventListener("click", (evt)=>{
+            console.log("down down down")
+
+            this.data.data.sort((a,b)=>{
+                return b.brasserie.localeCompare(a.brasserie);
+            })
+            //console.log(this.data.data[0])
+            this.setData(this.data, true);
+        })
+
+        document.querySelector(".btnBrasserieASC").addEventListener("click", (evt)=>{
+            console.log("up up up")
+
+            this.data.data.sort((a,b)=>{
+                return a.brasserie.localeCompare(b.brasserie);
+            })
+            //console.log(this.data.data[0])
+            this.setData(this.data, true);
+        })
+
+        document.querySelector(".btnNoteASC").addEventListener("click", (evt)=>{
+            console.log(evt)
+            this.data.data.sort((a,b)=>{
+                return a.note_moyenne.localeCompare(b.note_moyenne);
+            })
+            //console.log(this.data.data[0])
+            this.setData(this.data, true);
+
+        })
+
+        document.querySelector(".btnNoteDESC").addEventListener("click", (evt)=>{
+            console.log(evt)
+            this.data.data.sort((a,b)=>{
+                return b.note_moyenne.localeCompare(a.note_moyenne);
+            })
+            //console.log(this.data.data[0])
+            this.setData(this.data, true);
+        })
+
+
+
+
     }
 
     

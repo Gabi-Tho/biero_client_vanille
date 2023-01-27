@@ -37,24 +37,23 @@ class App {
     }
 
     pageAccueil(){
-        console.log("Accueil")
+
         let composantAccueil = new AccueilComposant();
     }
 
     pageProduit(){
-        console.log(this)
+
 
         //ServiceBiere.getListeBieres(this.afficherBiere.bind(this));
 
         let liste = new ListeComposant();
         //an object that contains the gabarit, noeudParent, 
-        console.log(liste);
-        console.log("Produit")
+
     }
 
     pageDetail(ctx){
         // Lire l'id...
-        console.log(ctx)
+   
         //id of beer coming from routeur
         let biere_id = ctx.params.id;
         let Detail = new BiereComposant(biere_id)
@@ -63,7 +62,7 @@ class App {
 
     
     afficherBiere(bieres){
-        console.log(bieres);
+
      }
  
 }

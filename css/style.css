@@ -3,6 +3,17 @@
 
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+
+    text-decoration: underline;
+
+}
+
 html, body {
     margin:0px;
     padding:0px;
@@ -127,6 +138,34 @@ div{
     padding: 10px;
 }
 
+th{
+    background-color: rgba(132, 77, 132, 0.789);
+}
+.th-container{
+    display: flex;
+
+
+}
+
+.th-container>span{
+    flex-grow: 1;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+}
+
+.th-container>p{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+td{
+    padding: 10px;
+}
+
 /***************************
 * commentaire
 ****************************/
@@ -138,13 +177,72 @@ div{
 }
 
 .commentaire p{
-    background-color:  rgba(132, 77, 132, 0.185);
-    padding: 30px;
-    align-self: center;
-    border-radius: 20px;
+
+    justify-content: space-around;
+    display: flex;
+    padding: 10px;
+    margin-top: 5px;
 }
 
-.input_id{
+section.commentaire{
+    background-color:  rgba(132, 77, 132, 0.185);
+}
 
-    
+input.courriel{
+    border: none;
+    border-bottom: 2px solid black;
+
+    width: 80%;
+}
+
+input.commentaire{
+    border: none;
+    height: 60px;
+    width: 80%;
+
+}
+
+.label-courriel{
+    padding-top: 10px;
+    align-self: center;
+    text-transform: uppercase;
+    padding-right: 5px;
+
+}
+
+.label-commentaire{
+    padding-top: 10px;
+    align-self: center;
+    text-transform: uppercase;
+    padding-right: 5px;
+}
+
+/***************************
+* buttons
+****************************/
+
+
+
+.btn{
+    text-decoration: none;
+
+    padding: 15px;
+    color: blACK;
+    border-radius: 20px;
+    text-transform: uppercase;
+
+}
+
+.btn:hover{
+    border: 1px  rgba(132, 77, 132) solid;
+}
+
+
+/***************************
+* erreur
+****************************/
+
+.erreur{
+    color: red;
+    margin-left: 25px;
 }

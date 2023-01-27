@@ -28,26 +28,38 @@ export default class BiereComposant extends Composant{
         //data of the instance of bierecomposant  //data du serveur         
         this.data.biere = biere.data;
         //biere{biere : }
-        console.log(this.data)
+
         this.setData(this.data);
     }
 
     setCommentaire(data){
         this.data.commentaires = data.data;
-        console.log(this.data)
+
         this.setData(this.data);
     }
 
     AjouterListener(){
         this.noeudParent.querySelector(".btnSoumettre").addEventListener("click", (evt)=>{
 
+            let regexCourriel = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             let courrielz = this.noeudParent.querySelector("[name='courriel']").value;
             let commentairez = this.noeudParent.querySelector("[name='commentaire']").value;
-            // let id = this.noeudParent.querySelector("small");
-            // console.log(id);
-            ServiceBiere.ajouterCommentaires(this.id, {courriel : courrielz, commentaire: commentairez}, (data)=>{
-                console.log(data);
-            });
+            let erreur = this.noeudParent.querySelector(".erreur");
+
+
+            if(courrielz.match(regexCourriel)){
+                ServiceBiere.ajouterCommentaires(this.id, {courriel : courrielz, commentaire: commentairez}, (data)=>{
+
+                    ServiceBiere.getCommentaires(this.id, this.setCommentaire.bind(this));
+                    this.setData(this.data);
+
+                    console.log(data);
+                });
+            }else{
+                erreur.innerHTML = "format de courriel invalide";
+            }
+
+
 
         })
     }
